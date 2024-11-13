@@ -1,0 +1,52 @@
+﻿@model List<Employee>
+
+<h2>Search Employees</h2>
+
+<form method="get" asp-action="Search">
+    <div class="form-group">
+        <label for="searchTerm">Search by Name (First/Last)</label>
+        <input type="text" id="searchTerm" name="searchTerm" class="form-control" placeholder="Enter First Name, Last Name" />
+    </div>
+    <div class="form-group">
+        <label for="birthDate">Search by Birth Date:</label>
+        <input type="date" id="birthDate" name="birthDate" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label class="control-label">JobTitle</label>
+        <select class="form-select" name="JobTitle">
+            <option></option>
+            <option>Developer</option>
+            <option>Sale</option>
+            <option>Accounting</option>
+            <option>Manager</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Search</button>
+</form>
+
+<hr />
+
+<h3>Search Results:</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Birth Date</th>
+            <th>Job Title</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var employee in Model)
+        {
+            <tr>
+                <td>@employee.ID</td>
+                <td>@employee.FirstName</td>
+                <td>@employee.LastName</td>
+                <td>@employee.BirthDate.ToString("yyyy-MM-dd")</td>
+                <td>@employee.JobTitle</td>
+            </tr>
+        }
+    </tbody>
+</table>
