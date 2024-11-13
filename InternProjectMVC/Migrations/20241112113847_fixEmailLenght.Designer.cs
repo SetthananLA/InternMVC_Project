@@ -5,14 +5,14 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-
+using InternProjectMVC.Models;
 #nullable disable
 
 namespace InternProjectMVC.Migrations
 {
     [DbContext(typeof(MyDatabaseContext))]
     [Migration("20241112113847_fixEmailLenght")]
-    partial class fixEmailLenght
+    partial class FixEmailLenght
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

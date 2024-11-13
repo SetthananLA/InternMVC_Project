@@ -5,7 +5,7 @@
 namespace InternProjectMVC.Migrations
 {
     /// <inheritdoc />
-    public partial class addValidatePhonenumber : Migration
+    public partial class AddValidatePhonenumber : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

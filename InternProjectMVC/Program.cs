@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-
+using InternProjectMVC.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -30,4 +30,4 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Employee}/{action=Create}/{id?}");
 
-app.Run();
+await app.RunAsync();

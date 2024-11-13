@@ -5,7 +5,7 @@
 namespace InternProjectMVC.Migrations
 {
     /// <inheritdoc />
-    public partial class test : Migration
+    public partial class Test : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -13,10 +13,5 @@ namespace InternProjectMVC.Migrations
 
         }
 
-        /// <inheritdoc />
-        protected override void Down(MigrationBuilder migrationBuilder)
-        {
-
-        }
     }
 }

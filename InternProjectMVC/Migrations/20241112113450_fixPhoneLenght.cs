@@ -5,7 +5,7 @@
 namespace InternProjectMVC.Migrations
 {
     /// <inheritdoc />
-    public partial class fixPhoneLenght : Migration
+    public partial class FixPhoneLenght : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

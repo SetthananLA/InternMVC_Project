@@ -5,14 +5,14 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-
+using InternProjectMVC.Models;
 #nullable disable
 
 namespace InternProjectMVC.Migrations
 {
     [DbContext(typeof(MyDatabaseContext))]
     [Migration("20241113014305_addValidatePhonenumber")]
-    partial class addValidatePhonenumber
+    partial class AddValidatePhonenumber
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-
+using InternProjectMVC.Models;
 namespace InternProjectMVC.Controllers
 {
     public class EmployeeController : Controller
@@ -55,7 +55,7 @@ namespace InternProjectMVC.Controllers
         }
 
         //หาพนักงานด้วยID
-        private async Task<Employee> GetEmployeeById(int? id)
+        private async Task<Employee?> GetEmployeeById(int? id)
         {
             if (id == null)
             {

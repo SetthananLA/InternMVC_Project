@@ -5,7 +5,7 @@
 namespace InternProjectMVC.Migrations
 {
     /// <inheritdoc />
-    public partial class addAnotations : Migration
+    public partial class AddAnotations : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -13,10 +13,6 @@ namespace InternProjectMVC.Migrations
 
         }
 
-        /// <inheritdoc />
-        protected override void Down(MigrationBuilder migrationBuilder)
-        {
 
-        }
     }
 }

@@ -5,7 +5,7 @@
 namespace InternProjectMVC.Migrations
 {
     /// <inheritdoc />
-    public partial class fixEmailLenght : Migration
+    public partial class FixEmailLenght : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
