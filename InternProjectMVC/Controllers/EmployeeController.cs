@@ -39,7 +39,7 @@ namespace InternProjectMVC.Controllers
             {
                 _context.Add(employee);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Details","Employee");  // หรือหน้าที่จะไปหลังจากบันทึก
+                return RedirectToAction("Details", "Employee");  // หรือหน้าที่จะไปหลังจากบันทึก
             }
             return View(employee);
         }
@@ -54,28 +54,32 @@ namespace InternProjectMVC.Controllers
             return View(employees);
         }
 
-        //ส่งหน้า edit ไปให้ user
-        // GET: Employee/Edit/{id}
+        //หาพนักงานด้วยID
+        private async Task<Employee> GetEmployeeById(int? id)
+        {
+            if (id == null)
+            {
+                return null;
+            }
+
+            return await _context.Employees.FindAsync(id);
+        }
+
+        // ส่งหน้า Edit ไปให้ user
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null) 
-            {
-                return NotFound();
-            }
+            var employee = await GetEmployeeById(id);
 
             if (ModelState.IsValid)
             {
-                var employee = await _context.Employees.FindAsync(id);
-
-
                 if (employee == null)
                 {
                     return NotFound();
                 }
-                return View(employee);  // ส่งข้อมูล Employee ไปยัง View
+
+                return View(employee);
             }
-            return View();
-            
+            return View(employee);
         }
 
 
@@ -83,7 +87,7 @@ namespace InternProjectMVC.Controllers
         // POST: Employee/Edit/{id}
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id,Employee employee)
+        public async Task<IActionResult> Edit(int id, Employee employee)
         {
             // ค้นหาผู้ใช้ปัจจุบันตาม ID
             var existingUser = await _context.Employees.FindAsync(id);
@@ -118,7 +122,7 @@ namespace InternProjectMVC.Controllers
                 // บันทึกการเปลี่ยนแปลง
                 await _context.SaveChangesAsync();
 
-                return RedirectToAction("Details","Employee");  // หลังจากอัปเดตแล้ว redirect ไปที่หน้า Index
+                return RedirectToAction("Details", "Employee");  // หลังจากอัปเดตแล้ว redirect ไปที่หน้า Index
             }
             return View(employee);  // ถ้ามีข้อผิดพลาดใน ModelState จะกลับไปที่ฟอร์ม
         }

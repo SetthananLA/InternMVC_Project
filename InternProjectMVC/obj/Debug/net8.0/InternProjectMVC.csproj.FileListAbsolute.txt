@@ -140,3 +140,4 @@ C:\Users\asus\source\repos\InternProjectMVC\InternProjectMVC\obj\Debug\net8.0\re
 C:\Users\asus\source\repos\InternProjectMVC\InternProjectMVC\obj\Debug\net8.0\InternProjectMVC.pdb
 C:\Users\asus\source\repos\InternProjectMVC\InternProjectMVC\obj\Debug\net8.0\InternProjectMVC.genruntimeconfig.cache
 C:\Users\asus\source\repos\InternProjectMVC\InternProjectMVC\obj\Debug\net8.0\ref\InternProjectMVC.dll
+C:\Users\asus\source\repos\InternProjectMVC\InternProjectMVC\obj\Debug\net8.0\InternProjectMVC.sourcelink.json
