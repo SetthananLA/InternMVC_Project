@@ -4,6 +4,7 @@ using InternProjectMVC.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace InternProjectMVC.Migrations
 {
     [DbContext(typeof(MyDatabaseContext))]
-    partial class MyDatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20241114063757_AddHistoryTable")]
+    partial class AddHistoryTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -76,11 +79,6 @@ namespace InternProjectMVC.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<string>("IpAddress")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
                     b.Property<DateTime>("LoginDate")
                         .HasColumnType("datetime2");
 
@@ -114,9 +112,6 @@ namespace InternProjectMVC.Migrations
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
-
-                    b.Property<int>("UserRole")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
