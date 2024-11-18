@@ -4,11 +4,6 @@ namespace InternProjectMVC.Models
 {
     public class User
     {
-        public enum Role 
-        { 
-            User,
-            Admin
-        }
 
         [Key]
         public int Id { get; set; }
@@ -26,6 +21,7 @@ namespace InternProjectMVC.Models
         public required string Password { get; set; }
 
         [Required]
-        public Role UserRole { get; set; }
+        [StringLength(20)]
+        public required string UserRole { get; set; }
     }
 }

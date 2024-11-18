@@ -1,0 +1,49 @@
+﻿@{
+    Layout = null;
+}
+
+@model IEnumerable<PendingAuth>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - InternProjectMVC</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/InternProjectMVC.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="container">
+        <h1>Check User Access</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>UserName</th>
+                    <th>Role</th>
+                    <th>Verification</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model)
+                {
+                    <tr>
+                        <td>@user.UserName</td>
+                        <td>@user.UserRole</td>
+
+                        <td>
+                            <a asp-action="VerifierUser" asp-route-id="@user.Id" asp-route-status="pass"><span>Confirm</span></a> |
+                            <a asp-action="VerifierUser" asp-route-id="@user.Id" asp-route-status="reject"><span class="text-danger">Reject</span></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>

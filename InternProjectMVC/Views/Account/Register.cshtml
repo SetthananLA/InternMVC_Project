@@ -4,47 +4,49 @@
 }
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - InternProjectMVC</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/InternProjectMVC.styles.css" asp-append-version="true" />
-</head>
-<div class="container d-flex justify-content-center align-items-center min-vh-80">
-    <div class="card shadow-sm p-4" style="width: 100%; max-width: 500px;">
-        <h2 class="text-center mb-4">Register</h2>
-        <form asp-action="Register" method="post">
-            <div class="mb-3">
-                <label asp-for="UserName" class="form-label"></label>
-                <input asp-for="UserName" class="form-control" />
-                <span asp-validation-for="UserName" class="text-danger"></span>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"] - InternProjectMVC</title>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/InternProjectMVC.styles.css" asp-append-version="true" />
+    </head>
+    <body>
+    <div class="container d-flex justify-content-center align-items-center min-vh-80">
+        <div class="card shadow-sm p-4" style="width: 100%; max-width: 500px;">
+            <h2 class="text-center mb-4">Register</h2>
+            <form asp-action="Register" method="post">
+                <div class="mb-3">
+                    <label asp-for="UserName" class="form-label"></label>
+                    <input asp-for="UserName" class="form-control" />
+                    <span asp-validation-for="UserName" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Email" class="form-label"></label>
+                    <input asp-for="Email" type="email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Password" class="form-label"></label>
+                    <input asp-for="Password" type="password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="UserRole" class="form-label"></label>
+                    <select asp-for="UserRole" class="form-select">
+                        <option>User</option>
+                        <option>Admin</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Register</button>
+            </form>
+            <div class="text-center mt-3">
+                <a asp-action="Login" class="text-decoration-none">Already have an account? Login</a>
             </div>
-            <div class="mb-3">
-                <label asp-for="Email" class="form-label"></label>
-                <input asp-for="Email" type="email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="mb-3">
-                <label asp-for="Password" class="form-label"></label>
-                <input asp-for="Password" type="password" class="form-control" />
-                <span asp-validation-for="Password" class="text-danger"></span>
-            </div>
-            <div class="mb-3">
-                <label asp-for="UserRole" class="form-label"></label>
-                <select asp-for="UserRole" class="form-select">
-                    <option>User</option>
-                    <option>Admin</option>
-                </select>
-            </div>
-            <button type="submit" class="btn btn-primary w-100">Register</button>
-        </form>
-        <div class="text-center mt-3">
-            <a asp-action="Login" class="text-decoration-none">Already have an account? Login</a>
         </div>
     </div>
-</div>
+    </body>
 </html>
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
